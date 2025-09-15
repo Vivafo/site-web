@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EscalierVIP.com - Demande de devis</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <style>
+    .form-container {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <nav class="container-fluid">
+    <ul>
+      <li><strong>EscalierVIP.com</strong></li>
+    </ul>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="devis.html" role="button">Devis</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section>
+      <hgroup>
+        <h2>Demande de devis</h2>
+        <h3>Un projet d’escalier ? Parlons-en !</h3>
+      </hgroup>
+      <p>Remplissez ce formulaire de consultation et notre équipe vous contactera rapidement pour discuter de votre projet et vous proposer une estimation personnalisée.</p>
+
+      <div class="form-container">
+        <form class="grid">
+          <input type="text" id="nom" name="nom" placeholder="Votre nom" aria-label="Nom" required>
+          <input type="email" id="email" name="email" placeholder="Votre email" aria-label="Email" required>
+          <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone" aria-label="Téléphone">
+          <select id="projet" name="projet" aria-label="Type de projet" required>
+            <option value="">Sélectionnez un type de projet</option>
+            <option value="escalier">Escalier</option>
+            <option value="garde-corps">Garde-corps</option>
+            <option value="main-courante">Main courante</option>
+            <option value="finitions">Finitions</option>
+            <option value="sur-mesure">Sur mesure</option>
+          </select>
+          <textarea id="message" name="message" placeholder="Décrivez votre projet..." aria-label="Message" required></textarea>
+          <button type="submit" onclick="event.preventDefault()">Envoyer ma demande</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>
+      <a href="index.html">Accueil</a> • 
+      <a href="a-propos.html">À propos</a> • 
+      <a href="services.html">Services</a> • 
+      <a href="devis.html">Devis</a>
+    </small>
+  </footer>
+</body>
+</html>
