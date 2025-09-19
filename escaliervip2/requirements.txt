@@ -1,0 +1,1 @@
+fastapi\nuvicorn[standard]\nJinja2\npython-multipart\n

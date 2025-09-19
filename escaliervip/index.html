@@ -1,76 +1,102 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EscalierVIP.com - Accueil</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>EscalierVIP — Escaliers sur mesure</title>
+  <meta name="description" content="EscalierVIP crée et installe des escaliers sur mesure, garde-corps et finitions premium partout au Québec.">
   <style>
-    body { font-family: 'Montserrat', sans-serif; }
-    .navbar { background: rgba(255,255,255,0.95); }
-    .navbar-nav .nav-link { color: #000; margin-left: 1rem; font-weight: 500; }
-    .navbar-nav .nav-link:hover { color: #d4af37; }
-    .logo { height: 40px; }
-
-    .hero {
-      position: relative;
-      background: url('images/realisations-1.jpg') no-repeat center center/cover;
-      height: 100vh;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+    :root{--brand:#000;--accent:#f2c94c;--bg:#fff;--text:#111;--muted:#6c757d;--border:#e5e7eb;--shadow:0 2px 12px rgba(0,0,0,.06);--container:1120px;--navbar-h:72px}
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;color:var(--text);background:var(--bg)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    .container{max-width:var(--container);margin:0 auto;padding:0 16px}
+    .text-center{text-align:center}
+    .mt-2{margin-top:8px}
+    .mt-4{margin-top:24px}
+    .mt-5{margin-top:40px}
+    .mb-3{margin-bottom:16px}
+    .mb-5{margin-bottom:40px}
+    .py-5{padding:32px 0}
+    .g-3{gap:16px}
+    .small{font-size:.9rem}
+    .text-muted{color:var(--muted)}
+    /* NAVBAR */
+    .navbar{position:fixed;top:0;left:0;right:0;height:var(--navbar-h);background:#fff;box-shadow:var(--shadow);z-index:1000}
+    .navbar .inner{display:flex;align-items:center;height:100%;gap:16px}
+    .navbar-brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--text)}
+    .navbar-brand img{height:48px;flex:0 0 auto;width:auto;max-width:none}
+    .nav{margin-left:auto;display:flex;gap:18px;align-items:center}
+    .nav a{padding:8px 6px;border-radius:8px}
+    .nav a.active{background:#000;color:#fff}
+    .toggler{display:none;margin-left:auto;background:transparent;border:1px solid var(--border);border-radius:8px;padding:6px 10px;cursor:pointer}
+    @media (max-width:768px){
+      .navbar-brand img{height:40px}
+      .toggler{display:block}
+      .nav{position:fixed;top:var(--navbar-h);left:0;right:0;background:#fff;box-shadow:var(--shadow);flex-direction:column;gap:0;display:none}
+      .nav a{width:100%;padding:14px 16px;border-bottom:1px solid var(--border)}
+      .nav.open{display:flex}
     }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
+    /* HERO */
+    .hero{position:relative;display:flex;align-items:center;justify-content:center;padding:calc(var(--navbar-h) + 64px) 16px 72px;text-align:center;color:#fff;background:#111}
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
+    .hero-content{position:relative;z-index:1;max-width:780px}
+    .hero h1{margin:0 0 16px;font-size:3rem}
+    .hero p{margin:0 0 24px;font-size:1.1rem;color:#f4f4f4}
+    .hero--home{background:url('images/escalier-fond.jpg') no-repeat center/cover}
+    @media (max-width:768px){
+      .hero{padding:calc(var(--navbar-h) + 40px) 16px 56px}
+      .hero h1{font-size:2.2rem}
     }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
+    /* BUTTONS */
+    .btn{display:inline-block;border-radius:12px;border:1px solid var(--brand);background:var(--brand);color:#fff;padding:12px 16px;font-weight:700;cursor:pointer;transition:background .2s,color .2s,border .2s}
+    .btn:hover{background:#222}
+    .btn-custom{background:var(--accent);border-color:var(--accent);color:#000}
+    .btn-custom:hover{background:#d8b441;color:#000}
+    .btn-outline-dark{background:transparent;border-color:#000;color:#000}
+    .btn-outline-dark:hover{background:#000;color:#fff}
+    /* LAYOUT */
+    .section-padding{padding:48px 0}
+    .bg-lightgray{background:#f5f6f8}
+    .row{display:flex;flex-wrap:wrap;margin:-12px}
+    .row>div{padding:12px;flex:1 1 100%}
+    @media (min-width:768px){
+      .col-md-6{flex:0 0 50%;max-width:50%}
+      .col-md-4{flex:0 0 33.333%;max-width:33.333%}
+      .col-md-3{flex:0 0 25%;max-width:25%}
     }
-    .hero h1 { font-size: 3rem; font-weight: 700; }
-    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
-    .btn-custom {
-      background-color: #d4af37; border: none; color: black;
-      padding: 0.8rem 1.5rem; font-weight: 600;
+    .img-fluid{max-width:100%;height:auto}
+    .rounded{border-radius:12px}
+    .gallery{display:flex;flex-wrap:wrap;gap:12px}
+    .gallery>div{flex:1 1 calc(50% - 12px)}
+    .gallery img{width:100%;height:auto;object-fit:cover;border-radius:12px}
+    @media (min-width:768px){
+      .gallery>div{flex:1 1 calc(25% - 12px)}
     }
-    .btn-custom:hover { background-color: #b8962f; color: white; }
-
-    .section-padding { padding: 4rem 0; }
-    .bg-lightgray { background: #f8f9fa; }
-    .gallery img { width: 100%; height: auto; object-fit: cover; border-radius: 5px; }
-    footer { background: #111; color: #ccc; padding: 2rem 0; }
-    footer a { color: #ccc; text-decoration: none; }
-    footer a:hover { color: #d4af37; }
+    blockquote{margin:0;padding:16px;border-left:4px solid var(--accent);background:#fff;box-shadow:var(--shadow);border-radius:10px;font-style:italic}
+    /* FOOTER */
+    footer{padding:40px 0;border-top:1px solid var(--border);text-align:center;margin-top:40px;background:#fafafa}
+    footer p{margin:8px 0}
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">EscalierVIP</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="a-propos.html">À propos</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="devis.html">Devis</a></li>
-        </ul>
+  <nav class="navbar">
+    <div class="container inner">
+      <a class="navbar-brand" href="index.html"><img src="images/logo-vivafo.svg" alt="Logo EscalierVIP Vivafo"><span>EscalierVIP</span></a>
+      <button class="toggler" aria-controls="nav" aria-expanded="false" aria-label="Ouvrir le menu">Menu</button>
+      <div id="nav" class="nav">
+        <a class="active" href="index.html">Accueil</a>
+        <a href="a-propos.html">À propos</a>
+        <a href="services.html">Services</a>
+        <a href="devis.html">Devis</a>
+        <a href="confidentialite.html">Confidentialité</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero d-flex" style="background: url('images/escalier-fond.jpg') no-repeat center center/cover;">
+  <section class="hero hero--home">
     <div class="hero-content">
       <h1>Escaliers sur mesure</h1>
       <p>Design moderne • Fabrication artisanale • Installation professionnelle</p>
@@ -78,10 +104,9 @@
     </div>
   </section>
 
-  <!-- Présentation -->
   <section class="section-padding">
     <div class="container">
-      <div class="row align-items-center">
+      <div class="row" style="align-items:center">
         <div class="col-md-6">
           <h2>Qui sommes-nous ?</h2>
           <p>Chez <strong>EscalierVIP</strong>, nous réalisons des escaliers uniques, adaptés à chaque intérieur. Notre savoir-faire allie modernité et tradition pour vous offrir des créations robustes, esthétiques et durables.</p>
@@ -94,7 +119,6 @@
     </div>
   </section>
 
-  <!-- Services -->
   <section class="section-padding bg-lightgray">
     <div class="container text-center">
       <h2>Nos Services</h2>
@@ -119,46 +143,57 @@
     </div>
   </section>
 
-  <!-- Réalisations -->
   <section class="section-padding">
     <div class="container">
       <h2 class="text-center mb-5">Nos Réalisations</h2>
-      <div class="row gallery g-3">
-        <div class="col-md-3"><img src="images/realisations-1.jpg" alt="Escalier 1"></div>
-        <div class="col-md-3"><img src="images/realisations-2.jpg" alt="Escalier 2"></div>
-        <div class="col-md-3"><img src="images/realisations-3.jpg" alt="Escalier 3"></div>
-        <div class="col-md-3"><img src="images/realisations-4.jpg" alt="Escalier 4"></div>
+      <div class="gallery">
+        <div><img src="images/realisations-1.jpg" alt="Escalier 1"></div>
+        <div><img src="images/realisations-2.jpg" alt="Escalier 2"></div>
+        <div><img src="images/realisations-3.jpg" alt="Escalier 3"></div>
+        <div><img src="images/realisations-4.jpg" alt="Escalier 4"></div>
       </div>
     </div>
   </section>
 
-  <!-- Témoignages -->
   <section class="section-padding bg-lightgray">
     <div class="container text-center">
       <h2>Ce que disent nos clients</h2>
       <div class="row mt-4">
         <div class="col-md-4">
-          <blockquote>"Un service impeccable, mon escalier est splendide !" – Marie L.</blockquote>
+          <blockquote>« Un service impeccable, mon escalier est splendide ! » – Marie L.</blockquote>
         </div>
         <div class="col-md-4">
-          <blockquote>"Un travail sérieux et une équipe passionnée." – David R.</blockquote>
+          <blockquote>« Un travail sérieux et une équipe passionnée. » – David R.</blockquote>
         </div>
         <div class="col-md-4">
-          <blockquote>"EscalierVIP a donné vie à notre projet, je recommande !" – Sophie G.</blockquote>
+          <blockquote>« EscalierVIP a donné vie à notre projet, je recommande ! » – Sophie G.</blockquote>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container text-center">
-      <p>© 2025 EscalierVIP.com • Tous droits réservés</p>
-      <p><a href="index.html">Accueil</a> • <a href="a-propos.html">À propos</a> • <a href="services.html">Services</a> • <a href="devis.html">Devis</a></p>
+      <p>© 2025 EscalierVIP.com</p>
+      <p>
+        <a href="index.html">Accueil</a> • 
+        <a href="a-propos.html">À propos</a> • 
+        <a href="services.html">Services</a> • 
+        <a href="devis.html">Devis</a> • 
+        <a href="confidentialite.html">Confidentialité</a>
+      </p>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const toggler=document.querySelector('.toggler');
+    const nav=document.getElementById('nav');
+    if(toggler){
+      toggler.addEventListener('click',()=>{
+        nav.classList.toggle('open');
+        toggler.setAttribute('aria-expanded',nav.classList.contains('open'));
+      });
+    }
+  </script>
 </body>
 </html>
-

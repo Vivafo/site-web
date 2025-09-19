@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<form hx-post="/api/calc/limon" hx-target="#calc-result" hx-swap="innerHTML" class="space-y-4">
+  <input type="number" name="rise" step="0.1" placeholder="Hauteur (rise)" required class="input">
+  <input type="number" name="run" step="0.1" placeholder="Profondeur (run)" required class="input">
+  <input type="number" name="steps" placeholder="Nombre de marches" required class="input">
+  <button type="submit" class="btn">Calculer</button>
+</form>
+<div id="calc-result" class="mt-6"></div>
+{% endblock %}

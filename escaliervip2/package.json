@@ -1,0 +1,10 @@
+{
+  "name": "escaliervip",
+  "scripts": {
+    "build:css": "tailwindcss -i ./app/static/css/tailwind.css -o ./app/static/css/tailwind.css --minify --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
+

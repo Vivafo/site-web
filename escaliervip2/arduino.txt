@@ -1,0 +1,20 @@
+escaliervip2/
+  app/
+    __init__.py
+    main.py
+    routers/
+      pages.py
+      calc.py
+    services/
+      calc_limon.py
+    templates/
+      base.html
+      home.html
+    static/
+      css/
+        tailwind.css
+  pyproject.toml        # si tu utilises Poetry
+  requirements.txt      # si tu préfères pip
+  tailwind.config.js
+  package.json          # pour Tailwind build
+  Dockerfile
