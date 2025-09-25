@@ -1,7 +1,7 @@
-escaliervip2/
+﻿Calcul_escalierWeb/
   app/
     __init__.py
-    main.py
+    Calcul_escalierWeb.py
     routers/
       pages.py
       calc.py
@@ -18,3 +18,5 @@ escaliervip2/
   tailwind.config.js
   package.json          # pour Tailwind build
   Dockerfile
+
+

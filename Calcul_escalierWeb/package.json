@@ -1,5 +1,5 @@
-{
-  "name": "escaliervip",
+﻿{
+  "name": "Calcul_escalierWeb",
   "scripts": {
     "build:css": "tailwindcss -i ./app/static/css/tailwind.css -o ./app/static/css/tailwind.css --minify --watch"
   },
@@ -7,4 +7,5 @@
     "tailwindcss": "^3.4.0"
   }
 }
+
 
