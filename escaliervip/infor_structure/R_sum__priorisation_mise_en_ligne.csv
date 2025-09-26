@@ -1,0 +1,12 @@
+ID,Titre,Avancement,Description,Importance
+JS1,Accueil,🟢 4 – Terminé,"Page d’accueil complète avec slogan, CTA, réalisations, témoignages.",⭐️⭐️⭐️⭐️ Indispensable au lancement
+JS2,À propos,🟡 2 – En cours de rédaction/validation,"Présentation de l’entreprise, équipe, valeurs, certifications.",⭐️⭐️⭐️ Important pour crédibilité
+JS3,Services,🟡 2 – En cours de rédaction/validation,"Description détaillée des services (escaliers, garde-corps, finitions).",⭐️⭐️⭐️⭐️ Indispensable
+JS4,Réalisations,🟡 2 – En cours de rédaction/validation,"Galerie photos avant/après, projets résidentiels et commerciaux.",⭐️⭐️⭐️⭐️ Indispensable
+JS5,Processus,🟡 2 – En cours de rédaction/validation,"Explication du processus de fabrication, gage de sérieux.","⭐️⭐️ Utile, mais peut venir après lancement"
+JS6,Conseils & FAQ,🔴 1 – Pas commencé,"FAQ, conseils et guides pratiques.",⭐️ Bonus (utile plus tard pour SEO)
+JS7,Informations techniques,🔴 1 – Pas commencé,"Plans techniques, normes, fiches produits.",⭐️ Bonus technique (phase 2)
+JS8,Contact & devis,🟡 2 – En cours de rédaction/validation,Formulaire devis/contact + coordonnées.,⭐️⭐️⭐️⭐️ Indispensable
+JS9,Mentions légales & politiques,🟠 3 – En cours d’intégration,"Mentions légales, politique confidentialité et cookies (Loi 25).",⭐️⭐️⭐️⭐️ Obligatoire légalement
+JS10,Carrière,🔴 1 – Pas commencé,"Offres d’emploi, stages, candidatures.","⭐️ Utile, mais secondaire"
+JS11,Blog / Actualités,🔴 1 – Pas commencé,"Blog avec actualités, tendances et astuces.","⭐️ Utile pour SEO et contenu, non urgent"
