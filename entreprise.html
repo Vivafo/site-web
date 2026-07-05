@@ -1,0 +1,634 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escalier VIP · Notre entreprise</title>
+  <meta name="description" content="Découvrez l'équipe, l'atelier et la philosophie d'Escalier VIP, spécialiste montréalais des escaliers et planchers sur mesure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #3f7652;
+      --secondary: #f0ebe5;
+      --dark: #1f2933;
+      --muted: #6b7280;
+      --light: #f9fbfd;
+      --card: #ffffff;
+      --accent: #f59e0b;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+      color: var(--dark);
+      background: var(--light);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: min(1100px, 92vw);
+      margin: 0 auto;
+    }
+
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(63, 118, 82, 0.1);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-title a {
+      text-decoration: none;
+    }
+
+    .brand-subtitle {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    nav.site-nav {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    nav.site-nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav.site-nav a:hover,
+    nav.site-nav a:focus {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(63, 118, 82, 0.25);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(63, 118, 82, 0.3);
+    }
+
+    main {
+      padding-top: 4rem;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    .hero {
+      padding: 6rem 0 5rem;
+      background: linear-gradient(135deg, rgba(63, 118, 82, 0.08), rgba(63, 118, 82, 0.15));
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.2rem);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .section-title {
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin: 0 0 1rem;
+    }
+
+    .section-lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 2rem;
+      box-shadow: 0 12px 32px rgba(31, 41, 51, 0.08);
+      border: 1px solid rgba(63, 118, 82, 0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      padding: 0;
+      margin: 1.5rem 0 0;
+      list-style: none;
+    }
+
+    .pill-list li {
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(63, 118, 82, 0.12);
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .value-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: 2rem;
+    }
+
+    .value-card {
+      padding: 1.75rem;
+      border-radius: 18px;
+      background: var(--card);
+      border: 1px solid rgba(63, 118, 82, 0.1);
+      box-shadow: 0 10px 28px rgba(31, 41, 51, 0.08);
+    }
+
+    .timeline {
+      margin-top: 2.5rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .timeline-step {
+      display: grid;
+      gap: 0.6rem;
+      padding: 1.5rem;
+      border-left: 4px solid rgba(63, 118, 82, 0.3);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 0 18px 18px 0;
+      box-shadow: 0 6px 20px rgba(31, 41, 51, 0.06);
+    }
+
+    .timeline-step strong {
+      color: var(--primary);
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+
+    .fact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.75rem;
+      margin-top: 2.5rem;
+    }
+
+    .fact-card {
+      padding: 1.8rem;
+      border-radius: 18px;
+      background: rgba(63, 118, 82, 0.08);
+      border: 1px solid rgba(63, 118, 82, 0.18);
+    }
+
+    .fact-card h3 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .contact-section {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 28px;
+      padding: 3rem;
+      display: grid;
+      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 3rem;
+      box-shadow: 0 18px 40px rgba(31, 41, 51, 0.4);
+    }
+
+    .contact-section a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .contact-section a:hover,
+    .contact-section a:focus {
+      text-decoration: underline;
+    }
+
+    footer.footer {
+      margin-top: 4rem;
+      padding: 2.5rem 0;
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    footer .footer-content {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      align-items: start;
+    }
+
+    footer h3 {
+      color: #fff;
+      margin-top: 0;
+    }
+
+    footer nav a {
+      display: inline-block;
+      margin-bottom: 0.35rem;
+      color: rgba(255, 255, 255, 0.72);
+      text-decoration: none;
+    }
+
+    footer nav a:hover {
+      color: #fff;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    @media (max-width: 860px) {
+      nav.site-nav {
+        display: none;
+      }
+
+      .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .contact-section {
+        padding: 2.5rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="brand">
+        <div class="logo-mark" aria-hidden="true">EMD</div>
+        <div>
+          <p class="brand-title"><a href="index.html">Escalier VIP</a></p>
+          <span class="brand-subtitle">Depuis 1998</span>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Navigation intra-page">
+        <a href="#mission">Mission</a>
+        <a href="#equipe">Équipe</a>
+        <a href="#valeurs">Valeurs</a>
+        <a href="#processus">Processus</a>
+        <a href="#infrastructures">Infrastructures</a>
+        <a href="#engagements">Engagements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary" href="#contact">Planifier une visite</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <span class="section-title">Notre entreprise</span>
+        <h1 id="hero-heading">Des artisans passionnés au service de vos projets résidentiels</h1>
+        <p>Escalier VIP conçoit, fabrique et installe des escaliers, garde-corps et planchers sur mesure pour les propriétaires de la grande région de Montréal. Notre équipe interne suit chaque projet avec rigueur, transparence et un profond respect du design de votre maison.</p>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="container">
+        <header>
+          <p class="section-title">Mission</p>
+          <h2 class="section-heading">Donner de la hauteur à vos intérieurs</h2>
+          <p class="section-lead">Notre priorité est d'offrir des escaliers  qui allient esthétique, sécurité et pérennité. Chaque intervention est guidée par l'écoute de vos besoins et par notre volonté de créer des environnements harmonieux.</p>
+        </header>
+        <div class="two-column">
+          <article class="card">
+            <h3>Un accompagnement intégral</h3>
+            <p>Diagnostics techniques, prises de mesures, conceptions 3D et coordination chantier : nous prenons en charge l'ensemble du projet. Vous profitez d'un interlocuteur unique qui supervise chaque étape jusqu'à la mise en service.</p>
+            <ul class="pill-list">
+              <li>Analyse structurale</li>
+              <li>Design personnalisé</li>
+              <li>Gestion des délais</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Un savoir-faire éprouvé</h3>
+            <p>Depuis plus de 25 ans, nos maîtres-menuisiers et finisseurs travaillent des essences nobles ainsi que des métaux contemporains pour répondre aux styles les plus exigeants.</p>
+            <ul class="pill-list">
+              <li>Bois massif &amp; ingénierie</li>
+              <li>Acier &amp; verre</li>
+              <li>Finition atelier</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="equipe" style="background: var(--secondary);">
+      <div class="container">
+        <header>
+          <p class="section-title">Équipe</p>
+          <h2 class="section-heading">Une structure multidisciplinaire</h2>
+          <p class="section-lead">La complémentarité de nos talents garantit des projets livrés dans les règles de l'art, sans compromis sur la qualité.</p>
+        </header>
+        <div class="two-column">
+          <div class="card">
+            <h3>Conception &amp; design</h3>
+            <p>Architectes d'intérieur et techniciens en architecture traduisent vos inspirations en plans détaillés, conformes aux normes RBQ et municipale.</p>
+          </div>
+          <div class="card">
+            <h3>Atelier de fabrication</h3>
+            <p>Menuisiers, soudeurs et finisseurs travaillent dans notre atelier du West Island, équipé d'une cabine de peinture et d'un centre d'usinage numérique.</p>
+          </div>
+          <div class="card">
+            <h3>Installation sur site</h3>
+            <p>Nos équipes mobiles sont formées aux interventions en milieu occupé : protection des surfaces, coordination avec les autres corps de métier et respect des délais.</p>
+          </div>
+          <div class="card">
+            <h3>Service client</h3>
+            <p>Un chargé de projet demeure à vos côtés pour organiser les visites, suivre les approbations et assurer un service après-vente rapide.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="valeurs">
+      <div class="container">
+        <header>
+          <p class="section-title">Valeurs</p>
+          <h2 class="section-heading">Ce qui guide chacune de nos décisions</h2>
+        </header>
+        <div class="value-grid">
+          <article class="value-card">
+            <h3>Respect du patrimoine</h3>
+            <p>Nous adaptons nos créations à l'architecture existante pour préserver le cachet et augmenter la valeur de votre propriété.</p>
+          </article>
+          <article class="value-card">
+            <h3>Transparence totale</h3>
+            <p>Des estimations détaillées, des échéanciers clairs et des suivis réguliers pour éliminer les surprises en cours de route.</p>
+          </article>
+          <article class="value-card">
+            <h3>Durabilité</h3>
+            <p>Matériaux certifiés, colles et finis à faible émission ainsi qu'un contrôle qualité rigoureux avant la livraison.</p>
+          </article>
+          <article class="value-card">
+            <h3>Sécurité</h3>
+            <p>Conformité aux normes du Code du bâtiment du Québec et aux exigences RBQ pour garantir la sécurité de toute la famille.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="processus" style="background: var(--secondary);">
+      <div class="container">
+        <header>
+          <p class="section-title">Processus</p>
+          <h2 class="section-heading">Un déroulement balisé en cinq étapes</h2>
+        </header>
+        <div class="timeline">
+          <div class="timeline-step">
+            <strong>1. Analyse</strong>
+            <p>Visite à domicile, relevés précis et collecte des contraintes techniques pour établir la faisabilité du projet.</p>
+          </div>
+          <div class="timeline-step">
+            <strong>2. Design</strong>
+            <p>Présentation de concepts 3D, sélection des essences et choix des finis en collaboration avec vous.</p>
+          </div>
+          <div class="timeline-step">
+            <strong>3. Fabrication</strong>
+            <p>Production dans notre atelier certifié, avec contrôle qualité à chaque étape et préassemblage des composantes.</p>
+          </div>
+          <div class="timeline-step">
+            <strong>4. Installation</strong>
+            <p>Coordination chantier, pose par nos équipes et ajustements millimétrés pour un résultat impeccable.</p>
+          </div>
+          <div class="timeline-step">
+            <strong>5. Remise &amp; suivi</strong>
+            <p>Inspection finale avec le client, conseils d'entretien et soutien après-vente continu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="infrastructures">
+      <div class="container">
+        <header>
+          <p class="section-title">Infrastructures</p>
+          <h2 class="section-heading">Un atelier montréalais moderne</h2>
+          <p class="section-lead">Situé à Ville Saint-Laurent, notre site centralise le design, la fabrication et la logistique. Cela nous permet de maintenir des délais courts et de superviser la qualité à chaque étape.</p>
+        </header>
+        <div class="fact-grid">
+          <div class="fact-card">
+            <h3>10 000 pi²</h3>
+            <p>Superficie de l'atelier incluant usinage CNC, zone métallique et aire de finition contrôlée.</p>
+          </div>
+          <div class="fact-card">
+            <h3>Cabine HVLP</h3>
+            <p>Application de vernis et huiles professionnelles pour obtenir des finis durables et uniformes.</p>
+          </div>
+          <div class="fact-card">
+            <h3>Entrepôt intégré</h3>
+            <p>Stockage des essences de bois importées et locales pour sécuriser l'approvisionnement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="engagements" style="background: var(--secondary);">
+      <div class="container">
+        <header>
+          <p class="section-title">Engagements</p>
+          <h2 class="section-heading">Responsabilité et conformité</h2>
+        </header>
+        <div class="two-column">
+          <article class="card">
+            <h3>Certifications</h3>
+            <p>Licence RBQ 8317-9192-05, membres APCHQ et programme de formation continue pour nos équipes techniques.</p>
+          </article>
+          <article class="card">
+            <h3>Environnement</h3>
+            <p>Valorisation des retailles, partenariats avec des recycleurs locaux et sélection de fournisseurs certifiés FSC.</p>
+          </article>
+          <article class="card">
+            <h3>Service après-vente</h3>
+            <p>Garantie écrite sur la fabrication et l'installation, avec interventions prioritaires en cas d'ajustement requis.</p>
+          </article>
+          <article class="card">
+            <h3>Partenariats</h3>
+            <p>Collaboration avec architectes, designers et entrepreneurs généraux pour assurer une intégration parfaite aux projets globaux.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <header>
+          <p class="section-title">Contact</p>
+          <h2 class="section-heading">Planifiez une rencontre avec notre équipe</h2>
+          <p class="section-lead">Nous vous accueillons sur rendez-vous afin de vous faire découvrir nos planches d'échantillons et nos exemples de réalisations.</p>
+        </header>
+        <div class="contact-section">
+          <div>
+            <h3>Coordonnées principales</h3>
+            <p><strong>Adresse&nbsp;:</strong><br>9500 Route Transcanadienne<br>Ville Saint-Laurent, QC H4S 1R7</p>
+            <p><strong>Téléphone&nbsp;:</strong><br><a href="tel:+15144246583">(514) 424-6583</a></p>
+            <p><strong>Courriel&nbsp;:</strong><br><a href="mailto:info@groupeemd.com">info@groupeemd.com</a></p>
+            <p><strong>Heures d'ouverture&nbsp;:</strong><br>Du lundi au jeudi : 8 h à 16 h<br>Vendredi : 8 h à midi (été)<br>Visites sur rendez-vous le soir et le samedi.</p>
+          </div>
+          <div>
+            <h3>Prendre rendez-vous</h3>
+            <p>Complétez le formulaire ci-dessous, nous vous contacterons pour confirmer l'heure souhaitée.</p>
+            <form action="mailto:info@groupeemd.com" method="post" enctype="text/plain">
+              <label>
+                Nom complet<br>
+                <input type="text" name="nom" placeholder="Votre nom" required>
+              </label>
+              <label>
+                Téléphone<br>
+                <input type="tel" name="telephone" placeholder="(___) ___-____" required>
+              </label>
+              <label>
+                Courriel<br>
+                <input type="email" name="courriel" placeholder="nom@exemple.com" required>
+              </label>
+              <label>
+                Résumé du projet<br>
+                <textarea name="message" placeholder="Type d'escalier, essences souhaitées, échéancier, budget estimé." rows="4"></textarea>
+              </label>
+              <button class="btn btn-primary" type="submit">Envoyer la demande</button>
+              <p style="font-size:0.85rem; opacity:0.8;">Vous pourrez joindre vos plans ou photos au courriel généré après l'envoi.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <h3>Escalier VIP</h3>
+        <p>Escaliers et planchers sur mesure fabriqués à Montréal avec une attention soutenue aux détails et à la durabilité.</p>
+      </div>
+      <div>
+        <h3>Navigation</h3>
+        <nav aria-label="Navigation secondaire">
+          <a href="index.html">Accueil</a><br>
+          <a href="services.html">Services</a><br>
+          <a href="escaliers.html">Escaliers</a><br>
+          <a href="garde-corps.html">Garde-corps</a><br>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <h3>Suivez-nous</h3>
+        <p><a href="https://www.facebook.com/escaliersmultidesign" target="_blank" rel="noreferrer noopener">Facebook</a><br>
+        <a href="https://www.instagram.com/escaliers.multi.design" target="_blank" rel="noreferrer noopener">Instagram</a><br>
+        <a href="https://www.linkedin.com/company/escaliers-multidesign" target="_blank" rel="noreferrer noopener">LinkedIn</a></p>
+      </div>
+    </div>
+    <p class="footer-note">© 2024 Escalier VIP. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
