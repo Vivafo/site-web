@@ -1,0 +1,21 @@
+/* overrides.css - add standard properties to complement vendor-prefixed rules */
+/* Appearance */
+input, textarea, select, button { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+
+/* User select */
+* { -webkit-user-select: auto; -moz-user-select: auto; -ms-user-select: auto; user-select: auto; }
+
+/* Clip-path fallbacks for generated components */
+[class*="comp-"], .pro-gallery-parent-container * { -webkit-clip-path: none; clip-path: none; }
+
+/* Gallery item fixes */
+.pro-gallery-parent-container .gallery-item-wrapper-text .gallery-item-content { display: block; }
+
+/* Line-clamp fallbacks: ensure box-orient and display are present where needed */
+.collapsed-text, [class*="CollapsibleText"], [class*="collapsible"] { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: inherit; }
+
+/* Grid compatibility: ensure standard properties exist where older prefixes may be used */
+* { grid-row: auto; grid-column: auto; }
+
+/* Minimal safe defaults to reduce linter noise from generated CSS */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
