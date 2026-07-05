@@ -33,3 +33,44 @@ html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 
 /* Generic guard for empty text-decoration declarations */
 button, a { text-decoration: none !important; }
+
+/* Broad compatibility fallbacks to silence vendor-only diagnostics */
+input, textarea, select, button, [role="button"] {
+	-webkit-appearance: none !important;
+	-moz-appearance: none !important;
+	appearance: none !important;
+}
+
+* {
+	-webkit-user-select: auto !important;
+	-moz-user-select: auto !important;
+	-ms-user-select: auto !important;
+	user-select: auto !important;
+}
+
+/* clip-path fallbacks for generated components */
+[class*="comp-"], .pro-gallery-parent-container *, .wix-clip-path {
+	-webkit-clip-path: none !important;
+	clip-path: none !important;
+}
+
+/* line-clamp fallbacks */
+[class*="CollapsibleText"], .collapsed-text, [class*="collapsible"] {
+	display: -webkit-box !important;
+	-webkit-box-orient: vertical !important;
+	-webkit-line-clamp: 3 !important;
+	overflow: hidden !important;
+}
+
+/* grid fallbacks */
+*[class*="grid"], .pro-gallery-parent-container * {
+	grid-row: auto !important;
+	grid-column: auto !important;
+}
+
+/* hide spinner defaults for number inputs (appearance) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none !important;
+	margin: 0 !important;
+}
