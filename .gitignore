@@ -10,3 +10,9 @@ Thumbs.db
 __pycache__/
 .vscode/
 site web/
+
+# Ignore downloaded temporary files and local export artifacts
+*.téléchargement
+*BelleHome*
+*BelleHome_files/
+*Guide colle/
