@@ -19,3 +19,17 @@ input, textarea, select, button { -webkit-appearance: none; -moz-appearance: non
 
 /* Minimal safe defaults to reduce linter noise from generated CSS */
 html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* Specific fixes for Wix pro-gallery 'show-more' buttons with undefined values */
+.comp-lwggem9a div.pro-gallery-parent-container .show-more-container button.show-more,
+.comp-lwggem9a div.pro-gallery-parent-container .show-more-container.pro-gallery-mobile-indicator button.show-more {
+	text-decoration: none !important;
+	border-width: 0px !important;
+	border-radius: 0px !important;
+	background: rgb(245, 245, 245) !important;
+	color: rgb(30, 30, 30) !important;
+	font: normal normal normal 15px/1.4em questrial, sans-serif !important;
+}
+
+/* Generic guard for empty text-decoration declarations */
+button, a { text-decoration: none !important; }
