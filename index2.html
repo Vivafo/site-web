@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil – Escalier VIP</title>
+    <!-- Inclure Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Utiliser la police Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            /* Image de fond sur toute la page */
+            background-image: url('Images/escalier-fond.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        /* Superposition sombre pour rendre l'image peu visible */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.1); /* Ajuste l'opacité ici (0.6 = sombre, 0.3 = plus clair) */
+            z-index: 0;
+            pointer-events: none;
+        }
+        /* Tout le contenu au-dessus du fond */
+        body > * {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-section {
+            /* Image de fond depuis une source fiable */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('Images/escalier-fond.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-stone-900">Escalier VIP</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-stone-600 hover:text-amber-700 transition-colors">Accueil</a>
+                <a href="#" class="text-stone-600 hover:text-amber-700 transition-colors">À propos</a>
+                <a href="#" class="text-stone-600 hover:text-amber-700 transition-colors">Services</a>
+                <a href="#" class="text-stone-600 hover:text-amber-700 transition-colors">Réalisations</a>
+                <a href="#" class="text-stone-600 hover:text-amber-700 transition-colors">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-stone-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <a href="#" class="block px-4 py-2 text-stone-800 hover:bg-neutral-100">Accueil</a>
+            <a href="#" class="block px-4 py-2 text-stone-800 hover:bg-neutral-100">À propos</a>
+            <a href="#" class="block px-4 py-2 text-stone-800 hover:bg-neutral-100">Services</a>
+            <a href="#" class="block px-4 py-2 text-stone-800 hover:bg-neutral-100">Réalisations</a>
+            <a href="#" class="block px-4 py-2 text-stone-800 hover:bg-neutral-100">Contact</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section (Bannière principale & Appel à l'action) -->
+        <section class="hero-section text-white flex items-center justify-center text-center py-20 md:py-48 rounded-lg mx-4 mt-4">
+            <div class="max-w-3xl px-4 relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-4">Votre intérieur mérite un chef-d'œuvre</h1>
+                <p class="text-xl md:text-2xl font-light mb-8 opacity-90">Conception, fabrication et installation d’escaliers sur mesure haut de gamme.</p>
+                <a href="#contact" class="inline-block bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">Demander un devis</a>
+            </div>
+        </section>
+
+        <!-- Présentation rapide -->
+        <section id="presentation" class="container mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4 text-stone-900">Escalier VIP : L'art du sur-mesure</h2>
+                    <p class="text-lg text-stone-700 leading-relaxed">
+                        Chez Escalier VIP, nous ne construisons pas seulement des escaliers, nous créons la pièce maîtresse de votre intérieur.
+                        Avec plus de 20 ans d'expérience, nous combinons un savoir-faire artisanal de pointe et des technologies modernes pour des réalisations uniques et intemporelles.
+                    </p>
+                    <a href="#about" class="mt-6 inline-block text-amber-700 hover:text-amber-800 font-semibold transition-colors">Découvrir notre histoire →</a>
+                </div>
+                <div>
+                    <img src="https://placehold.co/600x400/D1D5DB/4B5563?text=Pr%C3%A9sentation+de+l'entreprise" alt="Présentation d'Escalier VIP" class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Encadrés marketing -->
+        <section id="marketing" class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 text-stone-900">Pourquoi nous choisir ?</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="font-semibold text-lg mb-2">Qualité Artisanale</h3>
+                        <p class="text-stone-600">Chaque escalier est conçu avec une attention méticuleuse.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="font-semibold text-lg mb-2">Solutions Complètes</h3>
+                        <p class="text-stone-600">De la conception 3D à l'installation, un service clé en main.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <h3 class="font-semibold text-lg mb-2">Innovation & Design</h3>
+                        <p class="text-stone-600">Des escaliers sur mesure, uniques et modernes.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.485 9.499 5 8 5c-1.5 0-3 .682-4.5 2.049V5a2 2 0 00-2-2h-1a2 2 0 00-2 2v14a2 2 0 002 2h1a2 2 0 002-2v-2.165m-2.5-1.58C5.253 16.485 6.499 17 8 17c1.5 0 3-.682 4.5-2.049M12 10.753v8.5m0-8.5c1.168-.768 2.501-1.253 4-1.253 1.5 0 3 .682 4.5 2.049V17a2 2 0 002-2h1a2 2 0 002-2v-14a2 2 0 00-2-2h-1a2 2 0 00-2 2v2.165"></path></svg>
+                        <h3 class="font-semibold text-lg mb-2">Service Clients</h3>
+                        <p class="text-stone-600">Un suivi personnalisé et des devis rapides.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aperçu Réalisations -->
+        <section id="realisations" class="container mx-auto px-4 py-16">
+            <h2 class="text-3xl font-bold text-center mb-4 text-stone-900">Nos réalisations</h2>
+            <p class="text-center text-stone-600 mb-12 max-w-2xl mx-auto">
+                Découvrez la diversité de nos projets, de l'escalier droit classique au design flottant le plus audacieux.
+            </p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Exemple de carte de réalisation -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <img src="https://placehold.co/600x400/6B7280/FFFFFF?text=R%C3%A9alisation+1" alt="Réalisation Escalier VIP 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Escalier suspendu moderne</h3>
+                        <p class="text-stone-600">Montréal</p>
+                        <p class="text-sm mt-2 text-stone-500">Un design minimaliste en acier et bois qui crée une illusion de légèreté.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <img src="https://placehold.co/600x400/6B7280/FFFFFF?text=R%C3%A9alisation+2" alt="Réalisation Escalier VIP 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Escalier hélicoïdal</h3>
+                        <p class="text-stone-600">Laval</p>
+                        <p class="text-sm mt-2 text-stone-500">Un escalier en colimaçon compact et élégant, parfait pour les petits espaces.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <img src="https://placehold.co/600x400/6B7280/FFFFFF?text=R%C3%A9alisation+3" alt="Réalisation Escalier VIP 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Escalier en bois massif</h3>
+                        <p class="text-stone-600">Québec</p>
+                        <p class="text-sm mt-2 text-stone-500">Un escalier traditionnel et chaleureux qui s'intègre parfaitement à un décor classique.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#realisations" class="inline-block bg-white border border-stone-300 hover:bg-neutral-100 text-stone-800 font-bold py-3 px-8 rounded-full shadow-md transition-colors">Voir toutes les réalisations</a>
+            </div>
+        </section>
+
+        <!-- Témoignages -->
+        <section id="temoignages" class="bg-stone-800 text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-12">Ce que nos clients disent</h2>
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <p class="italic text-lg leading-relaxed">
+                        "L'équipe d'Escalier VIP a transformé notre vision en réalité. Le résultat dépasse toutes nos attentes ! C'est la pièce maîtresse de notre maison."
+                    </p>
+                    <p class="font-bold">- Marie-Ève L.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appel à l'action final -->
+        <section id="contact" class="container mx-auto px-4 py-16 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-stone-900">Prêt à transformer votre intérieur ?</h2>
+            <p class="text-lg md:text-xl text-stone-600 mb-8 max-w-3xl mx-auto">
+                Contactez-nous pour une consultation gratuite et sans engagement. Nous vous aiderons à concevoir l'escalier de vos rêves.
+            </p>
+            <a href="#contact-devis" class="inline-block bg-amber-700 hover:bg-amber-800 text-white font-bold py-4 px-10 rounded-full shadow-lg transition-transform transform hover:scale-105 text-lg">Demander mon devis</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 text-stone-300 py-12 mt-auto">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Escalier VIP</h3>
+                <p class="text-sm">Créateurs d'escaliers d'exception.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-3">Navigation</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition-colors">Accueil</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">À propos</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Services</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Réalisations</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-3">Légal</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition-colors">Mentions légales</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Politique de confidentialité</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Politique de cookies</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-3">Contact</h4>
+                <p class="text-sm">info@escaliervip.com<br>123-456-7890</p>
+            </div>
+        </div>
+        <div class="text-center text-sm mt-8">
+            &copy; 2024 Escalier VIP. Tous droits réservés.
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript pour le menu mobile
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

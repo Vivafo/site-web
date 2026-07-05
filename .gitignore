@@ -1,0 +1,12 @@
+# Ignore Node modules and local OS/editor artifacts
+node_modules/
+package-lock.json
+.DS_Store
+desktop.ini
+Thumbs.db
+*.log
+*.sqlite
+*.pyc
+__pycache__/
+.vscode/
+site web/
