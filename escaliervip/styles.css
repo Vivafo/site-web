@@ -19,14 +19,14 @@ img{max-width:100%;height:auto;display:block}
 .navbar{position:fixed;top:0;left:0;right:0;height:var(--navbar-h);background:#fff;box-shadow:var(--shadow);z-index:1000}
 .navbar .inner{display:flex;align-items:center;height:100%;gap:16px}
 .navbar-brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--text)}
-.navbar-brand img{height:48px;flex:0 0 auto;width:auto;max-width:none}
+.navbar-brand img{height:60px;flex:0 0 auto;width:auto;max-width:none}
 .nav{margin-left:auto;display:flex;gap:18px;align-items:center}
 .nav a{padding:8px 6px;border-radius:8px}
 .nav a.active{background:#000;color:#fff}
 .toggler{display:none;margin-left:auto;background:transparent;border:1px solid var(--border);border-radius:8px;padding:6px 10px;cursor:pointer}
 
 @media (max-width:768px){
-  .navbar-brand img{height:40px}
+  .navbar-brand img{height:48px}
   .toggler{display:block}
   .nav{position:fixed;top:var(--navbar-h);left:0;right:0;background:#fff;box-shadow:var(--shadow);flex-direction:column;gap:0;display:none}
   .nav a{width:100%;padding:14px 16px;border-bottom:1px solid var(--border)}
