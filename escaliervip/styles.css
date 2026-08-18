@@ -104,11 +104,10 @@ textarea{resize:vertical}
 .form-check{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap}
 .form-check-input{margin-top:3px}
 
-.consent-link a{color:#0d6efd;text-decoration:underline}
-.consent-link a:hover{color:#0a58ca}
 .consent-link{width:100%;margin:4px 0 0 30px;font-size:.9rem}
-.consent-link a{color:var(--brand)}
-.text-danger{color:var(--danger)}
+.consent-link a{color:#0d6efd;text-decoration:underline}
+.consent-link a:hover{color:#0a58ca}.text-danger{color:var(--danger)}
+
 .alert{padding:12px 14px;border-radius:12px;margin-bottom:14px}
 .alert-success{background:#ecf7f1;border:1px solid #cfe9db}
 .alert-danger{background:#fdecef;border:1px solid #f6ccd3}
@@ -135,7 +134,7 @@ footer p{margin:8px 0}
 .faq-content h2{margin-top:40px;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
 .faq-content h2:first-of-type{margin-top:0}
 .faq-item{background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);margin-bottom:12px;overflow:hidden}
-.faq-item summary{list-style:none;cursor:pointer;padding:16px 44px 16px 18px;font-weight:600;position:relative;user-select:none}
+.faq-item summary{position:relative;cursor:pointer;padding:16px 48px 16px 18px;list-style:none;-webkit-user-select:none;user-select:none}
 .faq-item summary::-webkit-details-marker{display:none}
 .faq-item summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:1.4rem;font-weight:400;color:var(--muted);transition:transform .2s}
 .faq-item[open] summary::after{transform:translateY(-50%) rotate(45deg)}
