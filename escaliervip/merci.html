@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Merci — EscalierVIP</title>
   <meta name="description" content="Merci pour votre demande de devis EscalierVIP. Nous vous contacterons rapidement avec une proposition personnalisée.">
+  <link rel="stylesheet" href="styles.css">
   <style>
     body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:#fff;color:#111}
-    .wrap{max-width:720px;margin:20vh auto 0;padding:0 16px;text-align:center}
+    .wrap{max-width:720px;margin:calc(var(--topbar-h) + var(--navbar-h) + 10vh) auto 0;padding:0 16px 60px;text-align:center}
     .wrap h1{margin-bottom:12px;font-size:2.2rem}
     .wrap p{margin:0;font-size:1.1rem}
     a.btn{display:inline-block;margin-top:16px;padding:12px 16px;background:#000;color:#fff;text-decoration:none;border-radius:12px;font-weight:700}
@@ -15,10 +16,44 @@
   </style>
 </head>
 <body>
+  <header class="site-header">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <span class="topbar-location">St-Hubert</span>
+        <a href="tel:+15144246583">514-424-6583</a>
+        <a href="mailto:dcouture@escaliervip.com">dcouture@escaliervip.com</a>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="container inner">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo-escalier-vip.svg" alt="Logo EscalierVIP">
+          <span class="rbq-info">RBQ : 5782-9434-01<br>Escalier VIP - 9406-2056 Québec inc.</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
   <div class="wrap">
     <h1>Merci !</h1>
     <p>Votre demande a bien été envoyée. Nous revenons vers vous rapidement.</p>
     <a class="btn" href="index.html">Retour à l’accueil</a>
   </div>
+
+  <footer>
+    <div class="container text-center">
+      <p class="footer-contact">St-Hubert · <a href="tel:+15144246583">514-424-6583</a> · <a href="mailto:dcouture@escaliervip.com">dcouture@escaliervip.com</a></p>
+      <p>© 2025 EscalierVIP.com</p>
+      <p>
+        <a href="index.html">Accueil</a> •
+        <a href="a-propos.html">À propos</a> •
+        <a href="services.html">Services</a> •
+        <a href="types-escaliers.html">Types d'escaliers</a> •
+        <a href="devis.html">Devis</a> •
+        <a href="faq.html">FAQ</a> •
+        <a href="confidentialite.html">Confidentialité</a>
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
